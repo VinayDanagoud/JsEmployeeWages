@@ -1,3 +1,13 @@
+//UC1
+
+const Is_ABSENT = 0
+let EmpCheck = Math.floor(Math.random() * 10) % 2;
+if (EmpCheck == Is_ABSENT) {
+    console.log("Employee is Absent");
+    return;
+} else {
+    console.log("Employee is PRESENT");
+}
 
 const IS_PART_TIME = 1;
 const IS_FULL_TIME = 2;
@@ -18,8 +28,12 @@ switch (empCheck) {
     }
 }
 
-let empCheck = Math.floor(Math.random() * 10) % 3;
-let empHrs = getWorkingHours(empCheck);
-let empWage = empHrs * WAGE_PER_HOUR;
-console.log("Emp Wage: " + empWage);
+let totalEmpHrs = 0;
+for (let day = 0; day < NUM_OF_WORKING_DAYS; day++) {
+    let empCheck = Math.floor(Math.random() * 10) % 3;
+    totalEmpHrs += getWorkingHours(EmpCheck);
+}
+let empwage = totalEmpHrs * WAGE_PER_HOUR;
+console.log("Hour: " +totalEmpHrs+ " Emp Wage: " + empwage);
+
 
